@@ -3,7 +3,7 @@ addpath(genpath('../Yeast_kapp'));
 addpath(genpath('../Amino_acid/'));
 initCobraToolbox;
 
-load('GEM-yeast-split.mat'); % from /GitHub/Amino_acid/Models
+load('GEM-yeast-split.mat'); % from https://github.com/SysBioChalmers/Amino_acid/blob/master/Models/GEM-yeast-split.mat
 
 enzymedata = collectkcats(model_split.rxns(~ismember(model_split.rules,{''})),model_split,'saccharomyces cerevisiae');
 enzymedata.kcat(enzymedata.kcat < quantile(enzymedata.kcat,0.1,1)) = quantile(enzymedata.kcat,0.1,1);
